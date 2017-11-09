@@ -1,0 +1,13 @@
+{
+  "name": "demo2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.common.js",
+  "scripts": {
+    "dev":"webpack-dev-server --open --config webpack.dev.js",
+    "server":"node server",
+    "build":"webpack --config webpack.prod.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
