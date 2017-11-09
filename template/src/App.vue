@@ -1,26 +1,16 @@
-<template>
-  <div>
-    <div>123</div>
-    <div>123</div>
-    <router-view></router-view>
-  </div>
+<template lang="pug">
+  .test 123
+    router-view
 </template>
 
 <script>
-
-import $ from 'zepto'
-
 export default {
-  mounted () {
-    console.log($('div'))
-  }
+  
 }
 </script>
 
 <style lang="scss">
-  div{
-    color:blue;
-  }
+  @import './style/base/reset.scss';
 </style>
 
 

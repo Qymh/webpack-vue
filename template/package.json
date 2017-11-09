@@ -4,9 +4,9 @@
   "description": "",
   "main": "webpack.common.js",
   "scripts": {
-    "dev":"webpack-dev-server --open --config webpack.dev.js",
-    "server":"node server",
-    "build":"webpack --config webpack.prod.js"
+    "dev":"webpack-dev-server --open --config webpack/webpack.dev.js",
+    "server":"node webpack/server",
+    "build":"webpack --config webpack/webpack.prod.js"
   },
   "author": "",
   "license": "ISC"
