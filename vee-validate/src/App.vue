@@ -15,8 +15,8 @@
 </template>
 
 <script>
-import test from './validate'
-test()
+import validate from './validate'
+validate()
 
 export default {
   data () {

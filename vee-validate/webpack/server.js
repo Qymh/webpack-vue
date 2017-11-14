@@ -16,16 +16,23 @@ const port='8080'
 
 // 服务端输出
 const devMiddleware=webpackDevMiddleware(compiler,{
-  clientLogLevel:'none',
-  log:false,
   publicPath:webpackConfig.output.publicPath,
   quiet: true // 删除cli控制台信息
 })
 
 // 热加载
 const hotMiddleware=webpackHotMiddleware(compiler,{
-  log:false
+  log:false,
+  heartbeat: 2000
 })
+
+compiler.plugin('compilation', function (compilation) {
+  compilation.plugin('html-webpack-plugin-after-emit', function (data, cb) {
+    hotMiddleware.publish({ action: 'reload' })
+    cb()
+  })
+})
+
 
 // html5历史 api
 app.use(history())
