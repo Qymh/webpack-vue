@@ -11,7 +11,7 @@ const app=express()
 const compiler=webpack(webpackConfig) 
 
 // 域名端口
-const domain='192.168.8.253'
+const domain='127.0.0.1'
 const port='8080'
 
 // 服务端输出

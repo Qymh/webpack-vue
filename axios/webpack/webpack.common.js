@@ -73,9 +73,7 @@ module.exports={
   plugins:[
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
-      filename:'index.html',
-      template:'index.html',
-      inject:true
+      template:'./index.html'
     }),
     new webpack.ProvidePlugin({
       $:'zepto'
