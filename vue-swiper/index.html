@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <div id="app"></div>
+    <script>
+      let self = this;
+      document.addEventListener('touchstart', (e) => {
+        self.moveY = e.targetTouches[0].pageY;
+      })
+      document.addEventListener('touchmove', (e) => {
+        e.preventDefault();
+        let moveWidth = self.moveY - e.targetTouches[0].pageY;
+        if (moveWidth !== 0) {
+          document.body.scrollTop += moveWidth;
+        }
+      })
+    </script>
+  </body>
+</html>
