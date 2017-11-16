@@ -1,19 +1,10 @@
 {
   "presets": [
-    "es2015",
-    ["env", {
-      "modules": false,
-      "targets": {
-        "browsers": ["> 1%", "last 2 versions", "not ie <= 8"]
-      }
-    }],
+    "es2015", // 支持es6语法
     "stage-2"
   ],
-  "plugins": ["transform-runtime","transform-vue-jsx"],
-  "env": {
-    "test": {
-      "presets": ["env", "stage-2"],
-      "plugins": ["istanbul"]
-    }
-  }
+  "plugins": [
+    "transform-runtime",
+    "transform-vue-jsx" // jsx语法
+  ]
 }
