@@ -1,0 +1,68 @@
+@import './_color';
+@import './_publicBoth';
+
+// 20次循环
+
+@for $i from 1 through 20{
+  // margin
+  .l#{$i}{
+    left:$i * 0.1rem
+  }
+  .r#{$i}{
+    right:$i * 0.1rem
+  }
+  .t#{$i}{
+    top:$i * 0.1rem
+  }
+  .b#{$i}{
+    bottom:$i * 0.1rem
+  }
+  .mt#{$i}{
+    margin-top:$i * 0.1rem;
+  }
+  .mr#{$i}{
+    margin-right:$i * 0.1rem;
+  }
+  .mb#{$i}{
+    margin-bottom:$i * 0.1rem;
+  }
+  .ml#{$i}{
+    margin-left:$i * 0.1rem;
+  }
+
+  // padding
+  .pt#{$i}{
+    padding-top:$i * 0.1rem;
+  }
+  .pr#{$i}{
+    padding-right:$i * 0.1rem;
+  }
+  .pb#{$i}{
+    padding-bottom:$i * 0.1rem;
+  }
+  .pl#{$i}{
+    padding-left:$i * 0.1rem;
+  }
+
+  // 高宽
+  .col#{$i * 5}{
+    width:$i * 5%;
+  }
+  .row#{$i * 5}{
+    height:$i * 5%;
+  }
+}
+
+// 50次循环
+
+@for $i from 1 through 50{
+  .h#{$i}{
+    height:$i * 0.1rem;
+  }
+  .w#{$i}{
+    width:$i * 0.1rem;
+  }
+  .lh#{$i}{
+    line-height:$i * 0.1rem;
+  }
+}
