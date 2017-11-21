@@ -4,9 +4,23 @@
 </template>
 
 <script>
+
+import auth from './js/auth'
+
 export default {
-  mounted () {
-    
+  beforeCreate () {
+    auth.checkAuth()
+    let bool=auth.authenticated
+    if(!bool&&window.location.pathname!='/register'){
+      this.$router.push('/login')
+    }else{
+      this.token=localStorage.getItem('token')
+    }
+  },
+  data () {
+    return {
+      token:''
+    }
   }
 }
 </script>

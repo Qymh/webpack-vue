@@ -9,7 +9,7 @@ export default {
 </script>
 
 <style lang="scss">
-  @import './style/base/reset.scss';
+  @import './assets/style/base/reset.scss'
 </style>
 
 

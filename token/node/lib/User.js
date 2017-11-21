@@ -10,7 +10,7 @@ const UserSchema=new Schema({
   token:Schema.Types.Mixed
 })
 
-const UserModel=mongoose.model('user',UserSchema)
+const UserModel=mongoose.model('user',UserSchema) 
 
 function User(obj){
   for(var key in obj){
@@ -24,22 +24,30 @@ User.prototype.create=function(fn){
   let name=user.name
   User.checkSame(name,(err,token)=>{
     if(err) return fn(err)
-    user.token=token
-    let UserEntity=new UserModel(user)
+    // 用户创建成功
+    if(token){
+      user.token=token
+      let UserEntity=new UserModel(user)
+      UserEntity.save()
+      fn(null,true)
+    }
+    // 用户创建失败
+    else{
+      fn(null,false)
+    }
 
-    UserEntity.save()
-
-    fn(null,true)
   })
 }
 
 // 验证用户的唯一性
 User.checkSame=(name,fn)=>{
   User.SearchByName({name},(err,result)=>{
-    console.log(result)
+    // 用户存在
     if(result){
-      return fn(null,null)
-    }else{
+      fn(null,null)
+    }
+    // 用户不存在
+    else{
       User.giveToken(name,fn)
     }
   })
@@ -48,29 +56,10 @@ User.checkSame=(name,fn)=>{
 // 通过名字搜索用户
 User.SearchByName=(name,fn)=>{
   UserModel.findOne(name,(err,result)=>{
-    console.log(result)
     if(err) return fn(err)
     fn(null,result)
   })
 }
-
-// // 登陆
-// User.authenticate=(name,pass,fn)=>{
-//   UserModel.findOne({name,pass}).then((err,result)=>{
-//     if(err) fn(err)
-//     return fn(null,result)
-//   })
-// }
-
-
-
-// // 通过token搜索用户
-// User.prototype.SearchByToken=(token,fn)=>{
-//   UserModel.findOne({token}).then((err,result)=>{
-//     if(err) fn(err)
-//     return fn(null,result)
-//   })
-// }
 
 // 给用户传递token
 User.giveToken=(name,fn)=>{
@@ -78,6 +67,20 @@ User.giveToken=(name,fn)=>{
   fn(null,token)
 }
 
+// 登陆
+User.prototype.authenticate=(name,pass,fn)=>{
+  UserModel.findOne({name,pass},(err,result)=>{
+    if(err) return fn(err)
+    fn(null,result)
+  })
+}
 
+// 通过token搜索用户
+User.SearchByToken=(token,fn)=>{
+  UserModel.findOne({token},(err,result)=>{
+    if(err) fn(err)
+    return fn(null,result)
+  })
+}
 
 module.exports=User

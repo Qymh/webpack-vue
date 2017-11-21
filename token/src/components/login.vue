@@ -1,10 +1,10 @@
 <template lang="pug">
-  .registerBox
+  .loginBox
     form.h500.w500.pt50.ov(
       autoComplete="off" style="margin:0 auto"
       flex="cross:center dir:top"
     )
-      p.mb10.colorSky(flex="cross:center main:center") 注册
+      p.mb10.colorSky(flex="cross:center main:center") 登陆
       p.mb10.colorSky(flex="cross:center main:center" v-show="error") {{error}}
       //- 名字
       p.mb10.ov.pr
@@ -32,7 +32,7 @@
       //- 提交按钮
       button.btn-big(
         type="button"
-        @click="rigister"
+        @click="login"
       ) 提交
 </template>
 
@@ -44,25 +44,28 @@ import auth from '../js/auth'
 Vue.use(VeeValidate)
 
 export default {
+  created () {
+    console.log(navigator.userAgent)
+  },
   data () {
     return {
-      name:'', // 用户名
-      pass:'' , // 密码
-      error:''  // 错误提示的文字
+      name:'',
+      pass:'',
+      error:''  
     }
   },
-  methods: {
-    rigister(){
+  methods: { 
+    login(){
       this.$validator.validateAll().then(res=>{
-        // 符合验证
+        // 认证成功
         if(res){
           const user={
             name:this.name,
             pass:this.pass
           }
-          auth.register(this,user,'error')
+          auth.login(this,user,'error')
         }
-        // 不符合验证
+        // 认证失败
         else{
           this.name=''
           this.pass=''
