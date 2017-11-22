@@ -48,7 +48,7 @@ function isNullOrEmpty(item){
 }
 
 /**
- * 数组排序
+ * 数字的数组排序
  * @param {Array} arr 
  * @private {Number} order
  */
@@ -75,7 +75,24 @@ function sortArr(arr,order){
   return arr.sort(compare)
 }
 
+/**
+ * 字符的数组排序
+ * @param {Array} arr 
+ */
+function sort(arr,){
+  return arr.sort()
+}
+
+/**
+ * 获取当前时间(s)
+ */
+function getTiming(){
+  return Math.round(new Date().getTime()/1000)
+}
+
 export default{
   isNullOrEmpty,
-  sortArr
+  sort,
+  sortArr,
+  getTiming
 }

@@ -1,0 +1,87 @@
+/*---------------------- popup need css - begin -----------------------------*/
+ul,li {list-style-type:none;}
+input{-webkit-appearance:none;}
+button{border: 0; padding: 0; -webkit-appearance:none;}
+// select{appearance:none;-moz-appearance:none;-webkit-appearance:none;}
+.popup.popup-about {height:auto;top:initial;bottom:0;}
+.popup.popup-about .content-block {height: auto;margin:0;padding:0;}
+.disabled-color{background: #c8c9cb;}
+/*goods basic info*/
+.goods-basic-info {/*height:3.73rem;*/padding:0.4rem 0.5rem;position:relative;border-bottom: solid 1px #e1e1e1;}
+.goods-basic-info > img {float:left;width:2.875rem;height:2.875rem;}
+.goods-basic-info .info {margin-left:3.5rem;}
+.goods-basic-info .info > p {margin:0;}
+.goods-basic-info .info > .name {color:#323232;font-size:0.6rem;height:0.6rem;line-height:0.6rem;padding-right: 1rem; overflow:hidden;white-space:nowrap;text-overflow:ellipsis;-o-text-overflow:ellipsis;-icab-text-overflow:ellipsis;-khtml-text-overflow:ellipsis;-moz-text-overflow:ellipsis;-webkit-text-overflow:ellipsis;}
+.goods-basic-info .info > .unit-number {color:#727272;font-size:0.5rem;margin-top:0.3rem;}
+.goods-basic-info .info > .unit-number .unit {margin-right:0.5rem;}
+.goods-basic-info .info > .money {color:#f65a44;font-size:0.6rem;margin-top:0.4rem;}
+.goods-basic-info .info > .money .color{color: #727272; font-size: 0.5rem;}
+.goods-basic-info .info > .money .margin{margin-left: 0.5rem}
+.goods-basic-info .info > .money .unit {font-size:0.45rem;}
+.goods-basic-info .close {position:absolute;right:0.5rem;top:0.15rem;color:#828282; padding: 0.2rem;}
+.goods-basic-info .close .icon {font-size:0.8rem !important;}
+/*choose size*/
+.no-margin-left{margin-left: 0!important;}
+.choose-size {background-color:#fff;border-bottom:solid 1px #d6d7dc;}
+.choose-size .choose-size-btn {display:block;width:100%;height:1.75rem;line-height:1.75rem;padding:0 0.5rem;color:#323332;font-size:0.6rem;position:relative;}
+.choose-size .choose-size-btn .icon {position:absolute;right:0.5rem;top:0;color:#aeaeae;}
+.details-size {height:auto;}
+.details-size .check-btn {float:left;height:2rem;line-height:2rem;margin-left:0.5rem;color:#4c4c4c;font-size:0.65rem;padding-left:0.2rem;}
+.details-size .check-btn i{color: #f65a44; padding-right: 0.2rem; font-size: 0.75rem;}
+.details-size .number-space {float:right;height:2rem;line-height:2rem;margin-right:1.25rem;color:#323232;font-size:0.65rem;}
+.details-size .number-space input {width:4.125rem;height:1rem;border:solid 1px #efefef;padding:0.1rem 0.25rem;margin-left:0.2rem;}
+.details-size .choose-color {clear:both;padding:0.3rem 0.5rem 0; max-height: 6rem;overflow-y: auto;}
+.details-size .choose-color .color {margin: 0.1rem 0.5rem 0.1rem 0; display:inline-block;min-width:2.1rem;padding:0 0.2rem;height:1rem;line-height:1rem;background-color:#eee;border-radius:3px;font-size:0.55rem;color:#000;text-align:center;
+									max-width: 13rem;overflow:hidden; white-space:nowrap; text-overflow:ellipsis; -o-text-overflow:ellipsis; -icab-text-overflow: ellipsis; -khtml-text-overflow: ellipsis; -moz-text-overflow: ellipsis; -webkit-text-overflow: ellipsis;}
+.details-size .choose-color .color.unusable {color:#7d7d7d;}
+.details-size .choose-color .color.active {background-color:#f65a44;color:#fff;}
+.choose-size-batch {min-height:2rem;line-height:1.8rem;border-top:solid 1px #e1e1e1;padding:0 0.5rem;}
+.choose-size-batch .size {margin-left: 0.5rem; display:inline-block; padding: 0 0.2rem; height:1rem;line-height:1rem;background-color:#eee;border-radius:3px;font-size:0.55rem;color:#000;text-align:center;overflow: hidden;}
+.choose-size-batch .size:nth-child(1){margin-left: 0;}
+.choose-size-batch .size.unusable {color:#7d7d7d;}
+.choose-size-batch .size.active {background-color:#f65a44;color:#fff;}
+.choose-size-detail {margin:0;padding:0;border-top:solid 1px #e1e1e1;padding:0 0.5rem; max-height: 6rem;width: 100%; overflow-y: auto;}
+.choose-size-detail > li {height:2rem;line-height:2rem;position:relative;}
+.choose-size-detail > li > .size {font-size:0.6rem;color:#646464;display: inline-block; width: 2.5rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+.choose-size-detail > li > .num {color:#727272;font-size:0.55rem;margin-left:2.5rem; position: absolute; left: 0;}
+.choose-size-detail > li > .num .text {color:#323232;font-size:0.55rem;font-style:normal;}
+.choose-size-detail > li > .choose-num {position:absolute;right:0;top:0;width:7.5rem;}
+.choose-size-detail > li > .choose-num .text {color:#323332;font-size:0.6rem;}
+.choose-size-detail > li > .choose-num .num-edit {top:0.5rem;}
+.checkbox-selected {display:none;}
+/*number edit*/
+.num-edit {position:absolute;right:0;bottom:1rem;width:4.625rem;height:1.05rem;line-height:1.05rem;border:solid 1px #e6e6e6;border-radius:2px;}
+.num-edit button {position:absolute;width:1.15rem;height:100%;line-height:100%;border:none;background-color:#fff;}
+.num-edit button.minus {top:0;left:0;}
+.num-edit button.add {right:0;top:0;}
+.num-edit input{position:absolute;top:0;left:1.15rem;width:2.2rem;height:100%;font-size:0.55rem;text-align:center;padding:0;color:#323232;background-color:#fff;border-top:none;border-bottom:none;border-left:solid 1px #e6e6e6;border-right:solid 1px #e6e6e6;}
+.num-edit button .icon {color:#323232;font-size:0.7rem;font-weight:bold;position:relative;bottom:0.01rem;right:0.03rem;}
+.num-edit button.unusable .icon {color:#d4d4d4;}
+/*action bar*/
+.action-bar {height:3.6rem;width:100%;}
+.action-bar .row {margin:0;}
+.action-bar .col-50 {width:50%;margin:0;}
+.action-bar .button {height:2.1rem;border-radius:0; line-height: 2.1rem;}
+.action-bar .button.collect {background-color:#e6e6e6;color:#323232;font-size:0.65rem;line-height:2.2rem;}
+.action-bar .button.collect .icon {color:#f65a44;font-size:0.8rem;display:inline;position:relative;}
+.action-bar .button.add-to-cart {background-color:#f65a44;color:#fff;font-size:0.75rem;line-height:2.1rem;}
+.action-bar .number-money-space {height:1.5rem;line-height:1.5rem;padding:0 0.5rem; width: 100%; overflow: hidden; text-align: right;}
+.action-bar .number-money-space .number {color:#727272;font-size:0.5rem;}
+.action-bar .number-money-space .money {color:#f65a44;font-size:0.6rem;}
+.rate{display: block; position: absolute;}
+/*choose number*/
+.order-number {background-color:#fff;height:2.25rem;border-bottom:solid 1px #d6d7dc;padding:0 0.5rem;}
+.order-number .warehouse-status {float:left;font-size:0.6rem;color:#8c8c8c;line-height:2.25rem;}
+.order-number .num-edit-space {float:right;width:7.5rem;height:2.25rem;line-height:2.25rem;position:relative;}
+.order-number .num-edit-space .text {font-size:0.6rem;color:#323332;display:inline-block;position:relative;bottom:0.1rem;}
+.order-number .num-edit-space .num-edit {top:0.6rem;}
+.order-number-unit {background-color:#fff;min-height:2.25rem;border-bottom:solid 1px #d6d7dc;padding:0 0.5rem; font-size: 0.6rem; line-height: 2.25rem; width: 100%; overflow: hidden;}
+.unit-select{ float: left; margin-right: 0.5rem;}
+.batch-btn{float: left;}
+.batch-btn i{color: #f65a44; padding-right: 0.2rem; font-size: 0.75rem;}
+.batch-input-box{float: right; color: #323232;}
+.batch-input-box .text{display: block; float: left; padding-right: 0.5rem;}
+.batch-input-box .batch-edit{position: relative; float: right; bottom: 0; margin-top: 0.6rem;}
+a.disabled-color:active{background-color: #c8c9cb!important;}
+a.disabled-color:active{background-color: #f65a44!important;}
+/*---------------------- popup need css - end -----------------------------*/

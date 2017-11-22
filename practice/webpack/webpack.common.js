@@ -35,7 +35,7 @@ module.exports={
       // css
       {
         test:/\.css$/,
-        loader:'style!css'
+        loader:'style-loader!css-loader'
       },
       // es5 es6
       {

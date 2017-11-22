@@ -1,21 +1,18 @@
 <template lang="pug">
-  
+  router-view
 </template>
 
 <script>
 
-import {tool} from './assets/js/utils'
-
 export default {
-  created () {
-    var arr=['1','1','2','5','1']
-    console.log(tool.sortArr(arr,-1))
-    console.log(this.$route)
-  }
+  
 }
 </script>
 
 <style lang="scss">
+  @import './assets/style/css/global.css';
+  @import './assets/style/css/sm.ext.min.css';
+  @import './assets/fonts/iconfont.css';
   @import './assets/style/base/reset.scss'
 </style>
 
