@@ -6,8 +6,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --config webpack/webpack.dev.js",
-    "build:dev": "cross-env NODE_ENV=development webpack --config webpack/webpack.prod.js",
-    "build": "cross-env NODE_ENV=production webpack --config webpack/webpack.prod.js"
+    "build:dev": "cross-env NODE_ENV=development webpack --progress --config webpack/webpack.prod.js",
+    "build": "cross-env NODE_ENV=production webpack --progress --config webpack/webpack.prod.js"
   },
   "dependencies": {
     "vue": "^2.5.16",

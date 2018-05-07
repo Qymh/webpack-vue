@@ -46,7 +46,8 @@ module.exports={
         use:[
           isDev?
           'vue-style-loader':MiniCssExtractPlugin.loader,
-          'css-loader'
+          'css-loader',
+          'postcss-loader'
         ]
       },
       // scss
@@ -56,6 +57,7 @@ module.exports={
           isDev?
           'vue-style-loader':MiniCssExtractPlugin.loader,
           'css-loader',
+          'postcss-loader',
           'sass-loader'
         ]
       },

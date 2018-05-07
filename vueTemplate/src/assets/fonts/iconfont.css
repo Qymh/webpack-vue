@@ -173,3 +173,8 @@ i{
 
 .icon-news_fill_light:before { content: "\e7e6"; }
 
+.flex{
+  display: flex;
+}
+
+
