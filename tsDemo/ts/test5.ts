@@ -63,4 +63,3 @@ class mycreate{
 }
 
 let create1=create(mycreate,'123')
-console.log(create1)

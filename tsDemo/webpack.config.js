@@ -4,7 +4,7 @@ const HtmlWebpackPlugin=require('html-webpack-plugin')
 
 module.exports={
   entry:{
-    test:'./ts/test5.ts'
+    test:'./ts/test6.ts'
   },
   mode:'development',
   output:{
