@@ -22,6 +22,10 @@
     div
       vue-title(titleName="tree shaking")
       button(@click="doSomething") todo
+    div
+      vue-title(titleName="postcss")
+      div.postcss 123
+    
 </template>
 
 <script>
@@ -64,6 +68,19 @@ export default {
   .bkImage{
     background-image:url('~images/banner2.jpg');
     background-size:cover;
+  }
+  .postcss{
+    transition: all 0.2s ease-in-out;
+    animation: fadeIn ease-in-out infinite 1s;
+    transform: translate(50%);
+    @keyframes fadeIn {
+      0%{
+        opacity: 0;
+      }
+      100%{
+        opacity: 1;
+      }
+    }
   }
 </style>
 
