@@ -1,9 +1,35 @@
 const path=require('path')
+const os=require('os')
 
 module.exports={
   lib:{
     resolve:file=>{
       return path.resolve(__dirname,'../..',file)
+    },
+    // 获取本机Ip数组
+    getLocalIp:()=>{
+      const os=require('os')
+      const osControl=os.networkInterfaces()
+      const netCategory=Object.keys(osControl)
+      const ips=[]
+
+      for(let category of netCategory){
+        let osChunk=osControl[category][1]
+        let address=osChunk.address
+        if(address!=='127.0.0.1'){
+          ips.push(address)
+        }
+      }
+
+      return ips
+    },
+    generateMessages:(ips,port)=>{
+      let msg='\n'
+      for(let ip of ips){
+        msg+=`\nyour application is listen at http://${ip}:${port}\n`
+      }
+      msg+=`\nyour browser will open at http://${ips[ips.length-1]||'127.0.0.1'}:${port}\n`
+      return msg
     }
   },
   dev:{
