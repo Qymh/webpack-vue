@@ -11,7 +11,8 @@
       },
     },
     "files":[
-      "ts/index.d.ts"
+      "ts/index.d.ts",
+      "ts/export4/node.d.ts"
     ],
     "include": [
       "ts/*"
