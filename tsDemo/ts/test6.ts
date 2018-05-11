@@ -64,7 +64,6 @@ class Animal{
 
 class Size{
   feet:number
-
   constructor(name:string){
 
   }

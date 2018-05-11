@@ -4,7 +4,13 @@ const HtmlWebpackPlugin=require('html-webpack-plugin')
 
 module.exports={
   entry:{
-    test:'./ts/test6.ts'
+    test:'./ts/export1.ts'
+  },
+  devServer:{
+    publicPath:'/',
+    contentBase:'/',
+    progress:true,
+    open:true
   },
   mode:'development',
   output:{
@@ -18,6 +24,12 @@ module.exports={
         loader:'ts-loader'
       }
     ]
+  },
+  resolve:{
+    extensions: [".ts", ".js"],
+    alias:{
+      'ts':path.resolve(__dirname,'ts')
+    }
   },
   plugins:[
     new HtmlWebpackPlugin({

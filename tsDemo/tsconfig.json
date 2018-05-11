@@ -2,6 +2,21 @@
   "compilerOptions": {
       "target": "es5",
       "module": "commonjs",
-      "sourceMap": true
-  }
+      "allowSyntheticDefaultImports": true,
+      "sourceMap": true,
+      "baseUrl": ".",
+      "jsx":"preserve",
+      "paths": {
+        "ts/*": ["./ts/*"]
+      },
+    },
+    "files":[
+      "ts/index.d.ts"
+    ],
+    "include": [
+      "ts/*"
+    ],
+    "exclude": [
+      "node_modules"
+    ]
 }
