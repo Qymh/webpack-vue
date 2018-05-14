@@ -38,7 +38,8 @@ module.exports={
         test:/\.js$/,
         use:isDev?
         ['babel-loader']:['thread-loader','babel-loader'],
-        exclude:/node_modules/
+        exclude:/node_modules/,
+        include:/src/
       },
       // css
       {

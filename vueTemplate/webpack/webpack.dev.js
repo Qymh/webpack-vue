@@ -6,9 +6,7 @@ const config=require('./config').dev
 const getIp=require('./config').lib.getLocalIp
 const generateMessages=require('./config').lib.generateMessages
 const env=process.env.NODE_ENV
-const isUseLocalIp=process.argv[2].trim()==='--useLocalIp'
-const ips=isUseLocalIp?getIp():''
-const messages=generateMessages(ips,config.port)
+const messages=generateMessages()
 
 const devWebpackConfig=merge(webpackConfig,{
   mode:env,
@@ -27,14 +25,7 @@ const devWebpackConfig=merge(webpackConfig,{
     inline:config.inline,
     overlay:config.overlay,
     hot:config.hot,
-    compress:config.compress,
-    after(app){
-      if(isUseLocalIp){
-        for(let ip of ips){
-          app.listen(8080,ip)
-        }
-      }
-    }
+    compress:config.compress
   },
 
   plugins:[

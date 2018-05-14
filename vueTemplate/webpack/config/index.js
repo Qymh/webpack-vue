@@ -1,7 +1,8 @@
 const path=require('path')
 const os=require('os')
+const isUseLocalIp=process.argv[2].trim()==='--useLocalIp'
 
-module.exports={
+const config={
   lib:{
     resolve:file=>{
       return path.resolve(__dirname,'../..',file)
@@ -16,15 +17,19 @@ module.exports={
       for(let category of netCategory){
         let osChunk=osControl[category][1]
         let address=osChunk.address
-        if(address!=='127.0.0.1'){
+        if(address!==config.dev.baseIp){
           ips.push(address)
         }
       }
 
-      return ips
+      return isUseLocalIp?ips:config.dev.baseIp
     },
-    generateMessages:(ips,port)=>{
+    // 构造信息
+    generateMessages:()=>{
+      let ips=config.lib.getLocalIp()
+      let port=config.dev.port
       let msg='\n'
+      ips=Array.isArray(ips)?ips.reverse():[config.dev.baseIp]
       for(let ip of ips){
         msg+=`\nyour application is listen at http://${ip}:${port}\n`
       }
@@ -49,8 +54,10 @@ module.exports={
 
     /** 客户端 **/
     
+    // baseIp
+    baseIp:'127.0.0.1',
     // ip
-    host:'127.0.0.1',
+    host:isUseLocalIp?'0.0.0.0':config.dev.baseIp,
     // 端口
     port:8080,
     // 客户端日志等级
@@ -86,3 +93,5 @@ module.exports={
     parallel:true
   }
 }
+
+module.exports=config
