@@ -4,13 +4,14 @@ const HtmlWebpackPlugin=require('html-webpack-plugin')
 
 module.exports={
   entry:{
-    test:'./ts/export5/export1.ts'
+    test:'./ts/test10.ts'
   },
   devServer:{
     publicPath:'/',
     contentBase:'/',
     progress:true,
-    open:false
+    open:false,
+    clientLogLevel:'error'
   },
   mode:'development',
   output:{
