@@ -21,7 +21,7 @@
     ],
     "sourceMap": true,
     "pretty": true,
-    // è·¯å¾„è§£æ
+    // Â·¾¶½âÎö
     "baseUrl": ".",
     "paths": {
       "@/*": [

@@ -29,13 +29,13 @@
       let text:string=''
       switch (this.loadingType) {
         case 0:
-          text='绛夊緟鍔犺浇'
+          text='等待加载'
           break
         case 1:
-          text='姝ｅ湪鍔犺浇...'
+          text='正在加载...'
           break
         case 2:
-          text='鍔犺浇瀹屾垚'
+          text='加载完成'
           break
       }
       return text
