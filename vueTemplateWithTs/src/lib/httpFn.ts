@@ -11,7 +11,7 @@ interface httpBase{
 
 const get:httpBase=(vm,api,data)=>{
   return new Promise(resolve=>{
-    ax.get(api,data).then(res=>{
+    ax.get(api,data).then((res:any)=>{
       resolve(res.data)
     })
   })

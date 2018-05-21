@@ -1,12 +1,19 @@
 <template lang="pug">
   .home
-    vue-title(title="Axios" href="/axios")
-    vue-title(title="Jsx" href="/jsx")
+    vue-title.title(
+      title="Axios" href="/axios"
+      :showRightArrow="true")
+    vue-title.title(
+      title="Jsx" href="/jsx"
+      :showRightArrow="true")
+    vue-title.title(
+      title="Vuex" href="/vuex"
+      :showRightArrow="true")
 </template>
 
 <script lang="ts">
   import {Vue,Component} from 'vue-property-decorator'
-  import VueTitle from 'components/VueTitle.vue'
+  import VueTitle from '@/components/VueTitle.vue'
 
   @Component({
     components:{
@@ -17,3 +24,10 @@
     
   }
 </script>
+
+<style lang="scss" scoped>
+  .title{
+    margin-bottom: 0.2rem;
+  }
+</style>
+

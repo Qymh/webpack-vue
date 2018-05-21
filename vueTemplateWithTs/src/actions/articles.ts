@@ -1,5 +1,5 @@
-import * as api from '../lib/api'
-import http from '../lib/httpFn'
+import * as api from '@/lib/api'
+import http from '@/lib/httpFn'
 
 interface getArticlesBase{
   (vm:object):Promise<any[]>

@@ -1,11 +1,12 @@
 {
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.vue",
+  ],
   "exclude": [
     "node_modules"
   ],
   "compilerOptions": {
-    "baseUrl": "src",
-    "jsx": "preserve",
-    "jsxFactory": "h",
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "allowJs": true,
@@ -16,20 +17,16 @@
     "lib": [
       "dom",
       "es5",
-      "es6",
-      "es7",
       "es2015.promise"
     ],
-    "paths": {
-      "*": [
-        "*",
-        "assets/*"
-      ]
-    },
     "sourceMap": true,
-    "pretty": true
-  },
-  "files": [
-    "src/index.d.ts"
-  ]
+    "pretty": true,
+    // 路径解析
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    }
+  }
 }

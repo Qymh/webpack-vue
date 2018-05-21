@@ -1,11 +1,12 @@
-import Vue from 'vue'
-import Router,{RouterOptions,RouteConfig} from 'vue-router'
+import Vue,{AsyncComponent} from 'vue'
+import Router,{RouteConfig} from 'vue-router'
 
 Vue.use(Router)
 
-const Home=()=>import('pages/Home.vue')
-const Axios=()=>import('pages/Axios.vue')
-const Jsx=()=>import('pages/Jsx.vue')
+const Home:AsyncComponent=()=>import('@/pages/Home.vue')
+const Axios:AsyncComponent=()=>import('@/pages/Axios.vue')
+const Jsx:AsyncComponent=()=>import('@/pages/Jsx.vue')
+const Vuex:AsyncComponent=()=>import('@/pages/Vuex.vue')
 
 const routes:RouteConfig[]=[
   {
@@ -19,7 +20,16 @@ const routes:RouteConfig[]=[
   {
     path:'/jsx',
     component:Jsx
+  },
+  {
+    path:'/vuex',
+    component:Vuex
   }
 ]
 
-export const createRouter = () => new Router({ mode: 'history', routes: routes })
+const router:Router=new Router({
+  mode:'history',
+  routes:routes
+})
+
+export default router

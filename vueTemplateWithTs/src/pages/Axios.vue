@@ -1,6 +1,8 @@
 <template lang="pug">
   .axios
-    vue-title(:title="loadingText")
+    vue-title(
+      :showLeftArrow="true"
+      :title="loadingText")
     div.infor(
       v-for="(article,index) in articles"
       :key="index"
@@ -8,9 +10,9 @@
 </template>
 
 <script lang="ts">
-import {Vue,Component,Prop} from 'vue-property-decorator'
-import VueTitle from 'components/VueTitle.vue'
-import articles from 'actions/articles'
+import {Vue,Component} from 'vue-property-decorator'
+import VueTitle from '@/components/VueTitle.vue'
+import articles from '@/actions/articles'
 
 @Component({
   components:{
@@ -40,7 +42,7 @@ export default class Axios extends Vue{
 
 <style lang="scss" scoped>
   .infor{
-    height:30px;
+    height:1rem;
     display: flex;
     justify-content: center;
     align-items: center;
