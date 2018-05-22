@@ -14,7 +14,7 @@ module.exports={
   output:{
     path:resolve('dist'),
     publicPath:'/',
-    filename:isDev?'[name].js':'[name].[chunkhash].js'
+    filename:isDev?'[name].js':'js/[name].[chunkhash].js'
   },
   module:{
     rules:[

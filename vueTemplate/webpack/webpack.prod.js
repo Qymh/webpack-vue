@@ -59,7 +59,7 @@ const prodWebpackConfig=merge(webpackConfig,{
     }),
     // 提取css
     new MiniCssExtractPlugin({
-      filename:'[name].[hash].css'
+      filename:'style/[name].[hash].css'
     }),
     /** 根据模块相对路径生成模块hashId 用于打包后模块缓存 **/
     new webpack.HashedModuleIdsPlugin()

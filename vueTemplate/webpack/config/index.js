@@ -31,7 +31,7 @@ const config={
       let msg='\n'
       ips=Array.isArray(ips)?ips.reverse():['127.0.0.1']
       for(let ip of ips){
-        msg+=`\nyour application is listen at http://${ip}:${port}\n`
+        msg+=`\nyour application is listening at http://${ip}:${port}\n`
       }
       msg+=`\nyour browser will open at http://${ips[ips.length-1]||'127.0.0.1'}:${port}\n`
       return msg
