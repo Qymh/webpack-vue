@@ -1,4 +1,4 @@
-import {ActionTree,MutationTree,GetterTree} from 'vuex'
+import {Module,ActionTree,MutationTree,GetterTree} from 'vuex'
 import articles from '@/actions/articles'
 
 interface IState{
@@ -27,10 +27,12 @@ const actions:ActionTree<IState,any>={
   }
 }
 
-export default{
+const count:Module<IState,any>={
   namespaced: true,
   state,
   getters,
   mutations,
   actions
 }
+
+export default count

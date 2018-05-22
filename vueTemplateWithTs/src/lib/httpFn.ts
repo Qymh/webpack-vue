@@ -1,3 +1,4 @@
+import {AxiosResponse,AxiosError} from 'axios'
 import ax from './axios'
 import {server} from './appconfig'
 
@@ -10,9 +11,11 @@ interface httpBase{
 }
 
 const get:httpBase=(vm,api,data)=>{
-  return new Promise(resolve=>{
-    ax.get(api,data).then((res:any)=>{
+  return new Promise((resolve,reject)=>{
+    ax.get(api,data).then((res:AxiosResponse)=>{
       resolve(res.data)
+    }).catch((res:AxiosError)=>{
+      reject(res.code)
     })
   })
 }

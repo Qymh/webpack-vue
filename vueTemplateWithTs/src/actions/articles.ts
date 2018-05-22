@@ -6,9 +6,11 @@ interface getArticlesBase{
 }
 
 const getArticles:getArticlesBase=(vm)=>{
-  return new Promise(resolve=>{
+  return new Promise((resolve,reject)=>{
     http.get(vm,api.articles).then(data=>{
       resolve(data)
+    }).catch((err:string)=>{
+      reject(err)
     })
   })
 }

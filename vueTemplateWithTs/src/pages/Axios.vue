@@ -19,6 +19,7 @@ import articles from '@/actions/articles'
     VueTitle
   }
 })
+
 export default class Axios extends Vue{
   private articles:any[]=[]
   private finish:boolean=false
@@ -35,6 +36,8 @@ export default class Axios extends Vue{
     articles.getArticles(this).then(data=>{
       this.articles=data
       this.finish=true
+    }).catch(err=>{
+      
     })
   }
 }

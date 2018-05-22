@@ -28,11 +28,6 @@ module.exports={
           }
         }
       },
-      // pug
-      {
-        test:/\.pug$/,
-        loader:'pug-plain-loader'
-      },
       // ts
       {
         test:/\.tsx?$/,
@@ -44,6 +39,11 @@ module.exports={
           }
         ],
         exclude:/node_modules/
+      },
+      // pug
+      {
+        test:/\.pug$/,
+        loader:'pug-plain-loader'
       },
       // js
       {

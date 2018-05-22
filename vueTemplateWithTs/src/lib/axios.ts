@@ -1,14 +1,16 @@
-import axios from 'axios'
+import axios,{AxiosInstance,AxiosRequestConfig,AxiosResponse} from 'axios'
 import {server} from './appconfig'
 
 const isDev=process.env.NODE_ENV==='development'
 
-const ax:any=axios.create({
-  baseURL:server.domain
+const ax:AxiosInstance=axios.create({
+  baseURL:server.domain,
+  timeout:20000
 })
 
 ax.interceptors.request.use(
-  (config:any)=>{
+  (config:AxiosRequestConfig)=>{
+    console.log(config)
     if(isDev){
       console.log(`serverApi:${config.baseURL}${config.url}`)
     }
@@ -17,7 +19,7 @@ ax.interceptors.request.use(
 )
 
 ax.interceptors.response.use(
-  (response:any)=>{
+  (response:AxiosResponse)=>{
     if(isDev){
       console.log(`--response data--`)
       console.log(response.data)

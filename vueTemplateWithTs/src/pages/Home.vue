@@ -18,6 +18,11 @@
   @Component({
     components:{
       VueTitle
+    },
+    beforeRouteEnter(to,from,next){
+      next(vm=>{
+        console.log(to)
+      })
     }
   })
   export default class Home extends Vue{

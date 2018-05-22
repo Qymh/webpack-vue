@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import fastclick from 'fastclick'
+import {Component} from 'vue-property-decorator'
 import App from '@/App.vue'
 import store from './store'
 import router from './router'
@@ -11,6 +12,12 @@ if('addEventListener' in document){
     (fastclick as any).attach(document.body)
   },false)
 }
+
+Component.registerHooks([
+  'beforeRouteEnter',
+  'beforeRouteLeave',
+  'beforeRouteUpdate'
+])
 
 const app:Vue=new Vue({
   el: '#app',
