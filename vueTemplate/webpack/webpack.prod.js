@@ -44,6 +44,14 @@ const prodWebpackConfig=merge(webpackConfig,{
     runtimeChunk:{name:'runtime'}
   },
   plugins:[
+    // 定义环境
+    new webpack.ProvidePlugin({
+      process:{
+        env:{
+          NODE_ENV:'"production"'
+        }
+      }
+    }),
     // 每次打包清除掉dist的所有文件
     new CleanWebpackPlugin(['dist'],{
       root:resolve('./'),

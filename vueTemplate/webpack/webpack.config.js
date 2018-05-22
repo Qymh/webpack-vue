@@ -111,7 +111,9 @@ module.exports={
       // 页面
       pages:resolve('src/pages'),
       // vuex
-      store:resolve('src/store')
+      store:resolve('src/store'),
+      // vue
+      vue$: 'vue/dist/vue.esm.js',
     }
   },
   plugins:[

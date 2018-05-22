@@ -17,19 +17,19 @@ const config={
       for(let category of netCategory){
         let osChunk=osControl[category][1]
         let address=osChunk.address
-        if(address!==config.dev.baseIp){
+        if(address!=='127.0.0.1'){
           ips.push(address)
         }
       }
 
-      return isUseLocalIp?ips:config.dev.baseIp
+      return isUseLocalIp?ips:'127.0.0.1'
     },
     // 构造信息
     generateMessages:()=>{
       let ips=config.lib.getLocalIp()
       let port=config.dev.port
       let msg='\n'
-      ips=Array.isArray(ips)?ips.reverse():[config.dev.baseIp]
+      ips=Array.isArray(ips)?ips.reverse():['127.0.0.1']
       for(let ip of ips){
         msg+=`\nyour application is listen at http://${ip}:${port}\n`
       }
@@ -53,11 +53,9 @@ const config={
     quiet:true,
 
     /** 客户端 **/
-    
-    // baseIp
-    baseIp:'127.0.0.1',
+
     // ip
-    host:isUseLocalIp?'0.0.0.0':config.dev.baseIp,
+    host:isUseLocalIp?'0.0.0.0':'127.0.0.1',
     // 端口
     port:8080,
     // 客户端日志等级

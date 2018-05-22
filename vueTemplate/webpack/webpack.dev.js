@@ -29,6 +29,14 @@ const devWebpackConfig=merge(webpackConfig,{
   },
 
   plugins:[
+    // 定义环境
+    new webpack.ProvidePlugin({
+      process:{
+        env:{
+          NODE_ENV:'"development"'
+        }
+      }
+    }),
     // 启用热更新
     new webpack.HotModuleReplacementPlugin(),
     // 编译出错则跳过
