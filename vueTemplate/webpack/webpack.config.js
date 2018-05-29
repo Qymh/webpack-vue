@@ -14,7 +14,7 @@ module.exports={
   output:{
     path:resolve('dist'),
     publicPath:'/',
-    filename:isDev?'[name].js':'js/[name].[chunkhash].js'
+    filename:isDev?'[name].js':'[name].[chunkhash].js'
   },
   module:{
     rules:[
@@ -111,9 +111,7 @@ module.exports={
       // 页面
       pages:resolve('src/pages'),
       // vuex
-      store:resolve('src/store'),
-      // vue
-      vue$: 'vue/dist/vue.esm.js',
+      store:resolve('src/store')
     }
   },
   plugins:[

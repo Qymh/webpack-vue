@@ -30,7 +30,7 @@ const devWebpackConfig=merge(webpackConfig,{
 
   plugins:[
     // 定义环境
-    new webpack.ProvidePlugin({
+    new webpack.DefinePlugin({
       process:{
         env:{
           NODE_ENV:'"development"'

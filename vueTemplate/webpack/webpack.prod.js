@@ -45,7 +45,7 @@ const prodWebpackConfig=merge(webpackConfig,{
   },
   plugins:[
     // 定义环境
-    new webpack.ProvidePlugin({
+    new webpack.DefinePlugin({
       process:{
         env:{
           NODE_ENV:'"production"'
@@ -59,7 +59,7 @@ const prodWebpackConfig=merge(webpackConfig,{
     }),
     // 提取css
     new MiniCssExtractPlugin({
-      filename:'style/[name].[hash].css'
+      filename:'[name].[hash].css'
     }),
     /** 根据模块相对路径生成模块hashId 用于打包后模块缓存 **/
     new webpack.HashedModuleIdsPlugin()
