@@ -9,7 +9,6 @@ const config = {
     },
     // 获取本机Ip数组
     getLocalIp: () => {
-      const os = require('os')
       const osControl = os.networkInterfaces()
       const netCategory = Object.keys(osControl)
       const ips = []
