@@ -1,8 +1,8 @@
-export default{
-  sayHello(){
+export default {
+  sayHello() {
     console.log('hello')
   },
-  saySomething(){
+  saySomething() {
     console.log('something')
   }
 }

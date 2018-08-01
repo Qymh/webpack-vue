@@ -20,36 +20,32 @@
         button(@click="changeMyStore('increase')") 点击增加
         button(@click="changeMyStore('substract')") 点击减少
     div
-      vue-title(titleName="tree shaking")
-      button(@click="doSomething") todo
-    div
       vue-title(titleName="postcss")
       div.postcss 123
     
 </template>
 
 <script>
-
 import VueTitle from 'components/VueTitle'
 
-import {mapGetters,mapActions} from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 import tools from 'lib/tools'
 
 export default {
-  name:'Home',
+  name: 'Home',
+  components: {
+    VueTitle
+  },
   computed: {
     ...mapGetters({
-      computedMyStore:'computedMyStore'
+      computedMyStore: 'computedMyStore'
     })
-  },
-  components:{
-    VueTitle
   },
   methods: {
     ...mapActions({
-      changeMyStore:'changeMyStore'
+      changeMyStore: 'changeMyStore'
     }),
-    doSomething(){
+    doSomething() {
       tools.sayHello()
       tools.saySomething()
     }
@@ -58,30 +54,28 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .colorWhite{
-    color:#ffffff;
-  }
-  .image{
-    height: 200px;
-    width: 500px;
-  }
-  .bkImage{
-    background-image:url('~images/banner2.jpg');
-    background-size:cover;
-  }
-  .postcss{
-    transition: all 0.2s ease-in-out;
-    animation: fadeIn ease-in-out infinite 1s;
-    transform: translate(50%);
-    @keyframes fadeIn {
-      0%{
-        opacity: 0;
-      }
-      100%{
-        opacity: 1;
-      }
+.colorWhite {
+  color: #ffffff;
+}
+.image {
+  height: 200px;
+  width: 500px;
+}
+.bkImage {
+  background-image: url('~images/banner2.jpg');
+  background-size: cover;
+}
+.postcss {
+  transition: all 0.2s ease-in-out;
+  animation: fadeIn ease-in-out infinite 1s;
+  transform: translate(50%);
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
     }
   }
+}
 </style>
-
-

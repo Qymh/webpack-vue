@@ -4,19 +4,17 @@
 </template>
 
 <script>
-  export default{
-    name:'App'
-  }
+export default {
+  name: 'App'
+}
 </script>
 
 <style lang="scss">
-  @import 'style/reset.scss';
-  .app{
-    padding: 0 40px;
-  }
+@import 'style/reset.scss';
+.app {
+  padding: 0 40px;
+}
 </style>
 
-<style src="fonts/iconfont.css"></style>
-
-
-
+<style src="fonts/iconfont.css">
+</style>

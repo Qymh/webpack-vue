@@ -1,27 +1,32 @@
-const webpack=require('webpack')
-const path=require('path')
-const {VueLoaderPlugin}=require('vue-loader')
-const HtmlWebpackPlugin=require('html-webpack-plugin')
-const MiniCssExtractPlugin=require('mini-css-extract-plugin')
-const config=require('./config')
-const resolve=config.lib.resolve
-const isDev=process.env.NODE_ENV==='development'
+const { VueLoaderPlugin } = require('vue-loader')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const config = require('./config')
+const resolve = config.lib.resolve
+const isDev = process.env.NODE_ENV === 'development'
 
-module.exports={
-  entry:{
-    app:resolve('src/app.js')
+module.exports = {
+  entry: {
+    app: resolve('src/app.js')
   },
-  output:{
-    path:resolve('dist'),
-    publicPath:'/',
-    filename:isDev?'[name].js':'[name].[chunkhash].js'
+  output: {
+    path: resolve('dist'),
+    publicPath: isDev ? config.dev.publicPath : config.prod.publicPath,
+    filename: isDev ? '[name].js' : 'js/[name].[chunkhash].js'
   },
-  module:{
-    rules:[
+  module: {
+    rules: [
+      // eslint
+      {
+        test: /\.(js|vue)$/,
+        enforce: 'pre',
+        loader: 'eslint-loader',
+        exclude: /node_modules/
+      },
       // vue
       {
-        test:/\.vue$/,
-        loader:'vue-loader',
+        test: /\.vue$/,
+        loader: 'vue-loader',
         options: {
           compilerOptions: {
             preserveWhitespace: false
@@ -30,33 +35,30 @@ module.exports={
       },
       // pug
       {
-        test:/\.pug$/,
-        loader:'pug-plain-loader'
+        test: /\.pug$/,
+        loader: 'pug-plain-loader'
       },
       // js
       {
-        test:/\.js$/,
-        use:isDev?
-        ['babel-loader']:['thread-loader','babel-loader'],
-        exclude:/node_modules/,
-        include:/src/
+        test: /\.js$/,
+        use: isDev ? ['babel-loader'] : ['thread-loader', 'babel-loader'],
+        exclude: /node_modules/,
+        include: /src/
       },
       // css
       {
-        test:/\.css$/,
-        use:[
-          isDev?
-          'vue-style-loader':MiniCssExtractPlugin.loader,
+        test: /\.css$/,
+        use: [
+          isDev ? 'vue-style-loader' : MiniCssExtractPlugin.loader,
           'css-loader',
           'postcss-loader'
         ]
       },
       // scss
       {
-        test:/\.scss$/,
-        use:[
-          isDev?
-          'vue-style-loader':MiniCssExtractPlugin.loader,
+        test: /\.scss$/,
+        use: [
+          isDev ? 'vue-style-loader' : MiniCssExtractPlugin.loader,
           'css-loader',
           'postcss-loader',
           'sass-loader'
@@ -64,64 +66,64 @@ module.exports={
       },
       // 图片
       {
-        test:/\.(ico|png|jpe?g|gif|svg)$/,
-        loader:'url-loader',
-        options:{
-          limit:8192,
-          name:'images/[name]_[hash:7].[ext]'
+        test: /\.(ico|png|jpe?g|gif|svg)$/,
+        loader: 'url-loader',
+        options: {
+          limit: 8192,
+          name: 'images/[name]_[hash:7].[ext]'
         }
       },
       // 字体
       {
         test: /\.(woff2?|eot|ttf|otf)$/,
-        loader:'url-loader',
-        options:{
-          limit:8192,
-          name:'fonts/[name]_[hash:7].[ext]'
+        loader: 'url-loader',
+        options: {
+          limit: 8192,
+          name: 'fonts/[name]_[hash:7].[ext]'
         }
       },
       // 视频
       {
         test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)$/,
-        loader:'url-loader',
-        options:{
-          limit:8192,
-          name:'media/[name]_[hash:7].[ext]'
+        loader: 'url-loader',
+        options: {
+          limit: 8192,
+          name: 'media/[name]_[hash:7].[ext]'
         }
       }
     ]
   },
-  resolve:{
+  resolve: {
     // 自动补全扩展
-    extensions:['.js','.vue'],
+    extensions: ['.js', '.vue'],
     // 别名
-    alias:{
+    alias: {
       // 样式
-      style:resolve('src/assets/style'),
+      style: resolve('src/assets/style'),
       // 图片
-      images:resolve('src/assets/images'),
+      images: resolve('src/assets/images'),
       // 字体
-      fonts:resolve('src/assets/fonts'),
+      fonts: resolve('src/assets/fonts'),
       // js模版
-      lib:resolve('src/assets/lib'),
+      lib: resolve('src/assets/lib'),
       // js事件
-      actions:resolve('src/assets/actions'),
+      actions: resolve('src/assets/actions'),
       // 组件
-      components:resolve('src/components'),
+      components: resolve('src/components'),
       // 页面
-      pages:resolve('src/pages'),
+      pages: resolve('src/pages'),
       // vuex
-      store:resolve('src/store')
+      store: resolve('src/store')
     }
   },
-  plugins:[
+  plugins: [
     new HtmlWebpackPlugin({
-      filename:'index.html',
-      template:resolve('index.html')
+      filename: 'index.html',
+      template: resolve('index.html')
     }),
     new VueLoaderPlugin()
   ],
-  stats:{
+  stats: {
     colors: true,
     modules: false,
     children: false,

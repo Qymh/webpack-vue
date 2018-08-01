@@ -1,13 +1,17 @@
 {
   "presets": [
-    ["env", {
-      "modules": false
-    }],
+    [
+      "env",
+      {
+        "modules": false
+      }
+    ],
     "stage-0"
   ],
-  "plugins": ["transform-runtime","transform-vue-jsx"],
+  "plugins": ["transform-runtime", "transform-vue-jsx"],
   "env": {
     "test": {
-      "presets": ["env", "stage-0"]    }
+      "presets": ["env", "stage-0"]
+    }
   }
 }
