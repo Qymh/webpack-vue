@@ -1,1 +1,1 @@
-export const articles='/api/personWeb_home/value'
+export const getAuthor = '/api/Qymh/forUiQymh/value'

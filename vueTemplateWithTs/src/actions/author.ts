@@ -1,16 +1,15 @@
-import ax from './axios'
+import http from '../lib/httpFn'
 
 export default {
   /**
-   * get函数
+   * 获取作者
    * @param api api接口
-   * @param data 数据
    */
-  get(api: string, data: object) {
+  getAuthor(api: string) {
     return new Promise((resolve, reject) => {
-      ax.get(api, data)
-        .then(res => {
-          resolve(res.data)
+      http.get(api, {})
+        .then(data => {
+          resolve(data)
         })
         .catch(err => {
           reject(err)

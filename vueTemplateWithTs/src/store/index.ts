@@ -1,14 +1,11 @@
 import Vue from 'vue'
-import Vuex,{StoreOptions} from 'vuex'
-import count from './modules/count'
+import Vuex from 'vuex'
+import author from './modules/author'
 
 Vue.use(Vuex)
 
-const store=new Vuex.Store({
-  modules:{
-    count
+export default new Vuex.Store({
+  modules: {
+    author
   }
 })
-
-export default store
-

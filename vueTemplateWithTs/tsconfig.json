@@ -1,22 +1,13 @@
 {
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.vue",
-  ],
-  "exclude": [
-    "node_modules"
-  ],
+  "include": ["src/**/*.ts", "src/**/*.vue"],
+  "exclude": ["node_modules"],
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "src/*"
-      ]
+      "@/*": ["src/*"]
     },
     // typeRoots option has been previously configured
-    "typeRoots": [
-      "node_modules/@types"
-    ],
+    "typeRoots": ["node_modules/@types"],
     "strictPropertyInitialization": false,
     // 以严格模式解析
     "strict": true,
@@ -38,13 +29,7 @@
     "moduleResolution": "node",
     // 在表达式和声明上有隐含的any类型时报错
     "noImplicitAny": true,
-    "lib": [
-      "dom",
-      "es5",
-      "es6",
-      "es7",
-      "es2015.promise"
-    ],
+    "lib": ["dom", "es5", "es6", "es7", "es2015.promise"],
     "sourceMap": true,
     "pretty": true
   }

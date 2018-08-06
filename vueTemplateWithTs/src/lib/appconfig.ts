@@ -1,11 +1,6 @@
-interface server{
-  domain:string
+const server = {
+  domain: 'https://api.qymh.org.cn',
+  timeout: 10000
 }
 
-const server:server={
-  domain:'https://json.qymh.org.cn'
-}
-
-export{
-  server
-}
+export { server }
