@@ -1,11 +1,11 @@
-const webpack = require('webpack')
-const merge = require('webpack-merge')
-const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
-const webpackConfig = require('./webpack.config')
-const config = require('./config').dev
-const generateMessages = require('./config').lib.generateMessages
-const env = process.env.NODE_ENV
-const messages = generateMessages()
+const webpack = require('webpack');
+const merge = require('webpack-merge');
+const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
+const webpackConfig = require('./webpack.config');
+const config = require('./config').dev;
+const generateMessages = require('./config').lib.generateMessages;
+const env = process.env.NODE_ENV;
+const messages = generateMessages();
 
 const devWebpackConfig = merge(webpackConfig, {
   mode: env,
@@ -47,6 +47,6 @@ const devWebpackConfig = merge(webpackConfig, {
       }
     })
   ]
-})
+});
 
-module.exports = devWebpackConfig
+module.exports = devWebpackConfig;

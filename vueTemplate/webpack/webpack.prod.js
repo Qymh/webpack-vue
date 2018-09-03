@@ -1,12 +1,12 @@
-const webpack = require('webpack')
-const merge = require('webpack-merge')
-const CleanWebpackPlugin = require('clean-webpack-plugin')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
-const UglifyjsWebpackPlugin = require('uglifyjs-webpack-plugin')
-const webpackConfig = require('./webpack.config')
-const config = require('./config').prod
-const resolve = require('./config').lib.resolve
+const webpack = require('webpack');
+const merge = require('webpack-merge');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const UglifyjsWebpackPlugin = require('uglifyjs-webpack-plugin');
+const webpackConfig = require('./webpack.config');
+const config = require('./config').prod;
+const resolve = require('./config').lib.resolve;
 
 const prodWebpackConfig = merge(webpackConfig, {
   mode: 'production',
@@ -64,6 +64,6 @@ const prodWebpackConfig = merge(webpackConfig, {
     /** 根据模块相对路径生成模块hashId 用于打包后模块缓存 **/
     new webpack.HashedModuleIdsPlugin()
   ]
-})
+});
 
-module.exports = prodWebpackConfig
+module.exports = prodWebpackConfig;

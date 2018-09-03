@@ -1,9 +1,9 @@
-const { VueLoaderPlugin } = require('vue-loader')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const config = require('./config')
-const resolve = config.lib.resolve
-const isDev = process.env.NODE_ENV === 'development'
+const { VueLoaderPlugin } = require('vue-loader');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const config = require('./config');
+const resolve = config.lib.resolve;
+const isDev = process.env.NODE_ENV === 'development';
 
 module.exports = {
   entry: {
@@ -130,4 +130,4 @@ module.exports = {
     chunks: false,
     chunkModules: false
   }
-}
+};

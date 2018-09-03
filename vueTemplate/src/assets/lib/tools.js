@@ -1,8 +1,8 @@
 export default {
   sayHello() {
-    console.log('hello')
+    console.log('hello');
   },
   saySomething() {
-    console.log('something')
+    console.log('something');
   }
-}
+};

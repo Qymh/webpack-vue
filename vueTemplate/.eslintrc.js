@@ -8,23 +8,20 @@ module.exports = {
     parser: 'babel-eslint'
   },
   extends: [
-    "eslint:recommended",
-    "plugin:vue/recommended",
-    "plugin:prettier/recommended"
+    'eslint:recommended',
+    'plugin:vue/recommended',
+    'plugin:prettier/recommended'
   ],
-  plugins: [
-    'vue'
-  ],
+  plugins: ['vue'],
   rules: {
-    // 不写冒号
-    "semi": [2, "never"],
     // 可以输入console
-    "no-console": "off",
-    "vue/max-attributes-per-line": "off",
-    "prettier/prettier": ["error", { "semi": false ,"singleQuote": true}],
+    'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    'vue/max-attributes-per-line': 'off',
+    'prettier/prettier': ['error', { singleQuote: true }],
     // 不解析html
-    "vue/no-parsing-error":0,
+    'vue/no-parsing-error': 0,
     // 使用单引号
-    "quotes":[2,"single"]
+    quotes: [2, 'single']
   }
-}
+};
