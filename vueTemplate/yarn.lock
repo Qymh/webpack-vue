@@ -2117,6 +2117,10 @@ date-fns@^1.27.2:
   version "1.29.0"
   resolved "http://registry.npm.taobao.org/date-fns/download/date-fns-1.29.0.tgz#12e609cdcb935127311d04d33334e2960a2a54e6"
 
+date-fns@^1.29.0:
+  version "1.29.0"
+  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-1.29.0.tgz#12e609cdcb935127311d04d33334e2960a2a54e6"
+
 date-now@^0.1.4:
   version "0.1.4"
   resolved "http://registry.npm.taobao.org/date-now/download/date-now-0.1.4.tgz#eaf439fd4d4848ad74e5cc7dbef200672b9e345b"
@@ -7519,6 +7523,10 @@ vm-browserify@0.0.4:
 void-elements@^2.0.1:
   version "2.0.1"
   resolved "http://registry.npm.taobao.org/void-elements/download/void-elements-2.0.1.tgz#c066afb582bb1cb4128d60ea92392e94d5e9dbec"
+
+vue-bus@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/vue-bus/-/vue-bus-1.1.0.tgz#803c53ced328a8ce01c95bfb72bf9d623d6df5a7"
 
 vue-eslint-parser@^2.0.3:
   version "2.0.3"

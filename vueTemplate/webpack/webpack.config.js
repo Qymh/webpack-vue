@@ -98,22 +98,7 @@ module.exports = {
     extensions: ['.js', '.vue'],
     // 别名
     alias: {
-      // 样式
-      style: resolve('src/assets/style'),
-      // 图片
-      images: resolve('src/assets/images'),
-      // 字体
-      fonts: resolve('src/assets/fonts'),
-      // js模版
-      lib: resolve('src/assets/lib'),
-      // js事件
-      actions: resolve('src/assets/actions'),
-      // 组件
-      components: resolve('src/components'),
-      // 页面
-      pages: resolve('src/pages'),
-      // vuex
-      store: resolve('src/store')
+      '@': resolve('src')
     }
   },
   plugins: [
