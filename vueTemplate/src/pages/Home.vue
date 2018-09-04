@@ -1,6 +1,6 @@
 <template lang="pug">
   .home
-    .vm 30px
+    .vm {{a}}
 </template>
 
 <script>
