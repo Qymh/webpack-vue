@@ -1,5 +1,6 @@
 const { VueLoaderPlugin } = require('vue-loader');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const StyleLintPlugin = require('stylelint-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const config = require('./config');
 const resolve = config.lib.resolve;
@@ -106,7 +107,10 @@ module.exports = {
       filename: 'index.html',
       template: resolve('index.html')
     }),
-    new VueLoaderPlugin()
+    new VueLoaderPlugin(),
+    new StyleLintPlugin({
+      files: 'src/**/*.(scss|vue|.css)'
+    })
   ],
   stats: {
     colors: true,
